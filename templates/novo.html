@@ -1,0 +1,29 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <form action="{{ url_for('criar') }}" method="post">
+
+        <fieldset>
+            <div class="form-group">
+                <label for="nome">Nome</label><br>
+                <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite seu nome">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="idade">Idade</label><br>
+                <input type="text" id="idade" name="idade" class="form-control" placeholder="Digite sua idade">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="altura">Altura</label><br>
+                <input type="text" id="altura" name="altura" class="form-control" placeholder="Digite sua altura">
+            </div>
+            <br>
+            <button type="submit" id="salvar">Salvar</button>
+        </fieldset>
+    </form>
+{% endblock %}
+
+    
+
+    
+    

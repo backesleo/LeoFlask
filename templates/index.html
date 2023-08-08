@@ -1,0 +1,32 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <table class="table table-bordered table-dark">
+
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Altura</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pessoa in pessoas %}
+
+            <tr>
+                <td>{{pessoa.nome}}</td>
+                <td>{{pessoa.idade}}</td>
+                <td>{{pessoa.altura}}</td>
+
+                <td>
+                    <a href="{{ url_for('editar', id=pessoa.id ) }}">Editar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <footer>
+        <h4>Desenvolvido pela Apex</h4>
+    </footer>
+{% endblock %}
+    

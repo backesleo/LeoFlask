@@ -1,0 +1,41 @@
+header{
+    background-color:#03062d;
+}
+
+body{
+    background-color: cadetblue;
+}
+
+footer{
+    background-color:#03062d;
+}
+
+table{
+    color: deeppink;
+}
+
+footer{
+    color: #03062d;
+}
+
+a{
+    color: blueviolet;
+}
+
+input{
+    background-color: coral;
+    color:blueviolet;
+}
+
+title{
+    color:gold
+}
+
+h1{
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+}
+
