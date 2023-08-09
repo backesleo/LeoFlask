@@ -20,7 +20,7 @@
         <div>
             <form action="{{ url_for('autenticar') }}" method="post">
                 
-                <input type="hidden" name="proximo" value="{{ proximo or url_for('login') }}">
+                <input type="hidden" name="proximo" value="{{ proximo or url_for('index') }}">
 
                 <p>
                     <label for="nome">Nome</label>

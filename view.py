@@ -45,24 +45,34 @@ def editar(id):
 
 @app.route('/atualizar', methods=['POST'])
 def atualizar():
-    # Obter os dados enviados pelo formulário
+    
     nome = request.form['nome']
     idade = request.form['idade']
     altura = request.form['altura']
     
-    # Encontrar a pessoa pelo nome
+    
     pessoa = Pessoa.query.filter_by(nome=nome).first()
     if pessoa:
-        # Atualizar os dados da pessoa
+        
         pessoa.idade = idade
         pessoa.altura = altura
-        # Commit para salvar as alterações no banco de dados
+        
         db.session.commit()
         flash('Dados atualizados com sucesso!')
     else:
         flash('Pessoa não encontrada.')
     
-    # Redirecionar de volta para a página principal
+    
+    return redirect(url_for('index'))
+
+@app.route('/deletar/<int:id>')
+def deletar(id):
+    if 'usuario_logado' not in session or session['usuario_logado'] is None:
+        return redirect(url_for('login'))
+
+    Pessoa.query.filter_by(id=id).delete()
+    db.session.commit()
+    flash('pessoa Deletada com sucesso')
     return redirect(url_for('index'))
 
 @app.route('/login')
